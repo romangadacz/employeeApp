@@ -20,14 +20,14 @@ namespace App.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IList<EmployeeDTO>>> GetEmployees()
+        public async Task<ActionResult<IList<EmployeeDTO>>> GetEmployeesAsync()
         {
             return Ok(await _employeeService.GetEmployees());
 
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<EmployeeDTO>> GetEmployee(int id)
+        public async Task<ActionResult<EmployeeDTO>> GetEmployeeAsync(int id)
         {
             return Ok(await _employeeService.GetEmployee(id));
 

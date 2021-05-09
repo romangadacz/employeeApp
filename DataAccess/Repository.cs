@@ -15,9 +15,9 @@ namespace DataAccess
     {
         const string apiURL = "http://masglobaltestapi.azurewebsites.net/api/Employees";
 
-        public async Task<Employee> GetEmployee(int id)
+        public async Task<Employee> GetEmployeeAsync(int id)
         {
-            var employees = await GetEmployees();
+            var employees = await GetEmployeesAsync();
 
             var employee =  employees.SingleOrDefault(x => x.Id == id);
             if (employee == null)
@@ -28,7 +28,7 @@ namespace DataAccess
 
         }
 
-        public async Task<IEnumerable<Employee>> GetEmployees()
+        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
             using (var httpClient = new HttpClient())
             {

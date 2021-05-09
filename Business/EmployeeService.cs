@@ -19,7 +19,7 @@ namespace Business
         }
         public async Task<IList<EmployeeDTO>> GetEmployees()
         {
-            var employees = await _repository.GetEmployees();
+            var employees = await _repository.GetEmployeesAsync();
             var employeesDTO = new List<EmployeeDTO>();
 
             foreach (var employee in employees)
@@ -33,7 +33,7 @@ namespace Business
 
         public async Task<EmployeeDTO> GetEmployee(int id)
         {
-            var employee = await _repository.GetEmployee(id);
+            var employee = await _repository.GetEmployeeAsync(id);
             return ConvertEmployeeToDTO(employee);
         }
 

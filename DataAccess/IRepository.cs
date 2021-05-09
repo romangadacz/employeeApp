@@ -8,7 +8,7 @@ namespace DataAccess
 {
     public interface IRepository
     {
-        Task<IEnumerable<Employee>> GetEmployees();
-        Task<Employee> GetEmployee(int id);
+        Task<IEnumerable<Employee>> GetEmployeesAsync();
+        Task<Employee> GetEmployeeAsync(int id);
     }
 }
